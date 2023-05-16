@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>User Info</h2>
+<br>
+<form action="saveUser" th:object="${newUser}" method="POST">
+    <input type="hidden" name="id" th:value="${newUser.getId()}" />
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" th:value="${newUser.getName()}" />
+    <br><br>
+    <label for="surname">Surname</label>
+    <input type="text" id="surname" name="surname" th:value="${newUser.getSurname()}" />
+    <br><br>
+    <label for="department">Department</label>
+    <input type="text" id="department" name="department" th:value="${newUser.getDepartment()}" />
+    <br><br>
+    <label for="salary">Salary</label>
+    <input type="text" id="salary" name="salary" th:value="${newUser.getSalary() != 0 ? newUser.getSalary() : ''}" />
+    <br><br>
+    <input type="submit" value="OK">
+</form>
+
+</body>
+</html>
