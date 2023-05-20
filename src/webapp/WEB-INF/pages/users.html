@@ -18,11 +18,11 @@
             <td th:text="${user.getDepartment()}"></td>
             <td th:text="${user.getSalary()}"></td>
             <td>
-                <form th:method="PATCH" th:action="@{/updateInfo}" th:url="updateButton" style="display: inline-block;">
-                    <input type="hidden" name="userId" th:value="${user.getId()}"/>
-                    <input type="submit" class="update-button" value="Update" onclick="window.location.href = '${updateButton}'"/>
+                <form th:action="@{/updateInfo}" th:url="updateButton" style="display: inline-block;">
+                    <input type="hidden" name="userId" th:value="${user.getId()}" />
+                    <input type="submit" class="update-button" value="Update" onclick="window.location.href = '${updateButton}'" />
                 </form>
-                <form  th:method="DELETE" th:action="@{/deleteUser}" th:url="deleteButton" style="display: inline-block;">
+                <form th:action="@{/deleteUser}" style="display: inline-block;">
                     <input type="hidden" name="userId" th:value="${user.getId()}"/>
                     <input type="submit" class="delete-button" value="Delete" onclick="window.location.href = '${deleteButton}'"/>
                 </form>
